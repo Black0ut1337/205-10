@@ -1,0 +1,41 @@
+using System;
+
+namespace lab1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter the initial value of xmin: ");
+
+            string sxmin = Console.ReadLine();
+            double xmin = double.Parse(sxmin);
+
+            Console.WriteLine("Enter the final value of xmax: ");
+            string sxmax = Console.ReadLine();
+            double xmax = double.Parse(sxmax);
+
+            Console.WriteLine("Enter value of dx: ");
+            string sdx = Console.ReadLine();
+            double dx = double.Parse(sdx);
+
+            double x1 = xmin;
+            double y, res = 1;
+
+            for (; x1 <= xmax; x1 += dx)
+            {
+                double x2 = xmin * 3;
+                y = Math.Pow(Math.Sin(x1 * x2 / x1 + 53 * Math.Pow(x2, 2)),2);
+                 Console.WriteLine("x = {0:0.00}\t\t y = {1:0.00}", x1, y);
+                double mult = y;
+                res += mult;
+
+            }
+
+            Console.WriteLine("*********************************");
+            Console.WriteLine("Result = {0}", res);
+
+            Console.ReadKey();
+        }
+    }
+}
